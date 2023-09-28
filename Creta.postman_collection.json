@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "6b4a8d67-dc41-413c-b805-26e19a61e634",
+		"name": "Creta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21923916"
+	},
+	"item": [
+		{
+			"name": "Take Home Assignment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Latitude is 51.51\", function () {\r",
+							"    pm.response.to.have.jsonBody(\"coord.lat\", 51.51);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Longitude is -0.13\", function () {\r",
+							"    pm.response.to.have.jsonBody(\"coord.lon\", -0.13);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check Weather Main\", function () {\r",
+							"    //Check if 'Wheather exists or not' exists in the response\r",
+							"    pm.expect(pm.response.json()).to.have.property(\"weather\");\r",
+							"    pm.expect(pm.response.json().weather[0]).to.have.property(\"main\", \"Drizzle\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check Wind Speed\", function () {\r",
+							"    var responseJson = pm.response.json();\r",
+							"\r",
+							"    // Check if 'wind.speed' exists in the response\r",
+							"    pm.expect(responseJson).to.have.property(\"wind\");\r",
+							"    pm.expect(responseJson.wind).to.have.property(\"speed\");\r",
+							"\r",
+							"    // Check if the wind speed is greater than or equal to 10 m/s\r",
+							"    pm.expect(responseJson.wind.speed).to.be.at.least(10);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check if Coordinates Correspond to London\", function () {\r",
+							"    var responseJson = pm.response.json();\r",
+							"\r",
+							"    // Check if 'name' (city name) in the response is equal to 'London'\r",
+							"    pm.expect(responseJson.name).to.eql(\"London\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22. \n\n",
+					"protocol": "https",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "b6 907d289e10d714a6e88b30761fae22. \n\n"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Take Home Assignment",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22. \n\n",
+							"protocol": "https",
+							"host": [
+								"samples",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "London,uk"
+								},
+								{
+									"key": "appid",
+									"value": "b6 907d289e10d714a6e88b30761fae22. \n\n"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Take Home Assignment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Latitude is 51.51\", function () {\r",
+							"    pm.response.to.have.jsonBody(\"coord.lat\", 51.51);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Longitude is -0.13\", function () {\r",
+							"    pm.response.to.have.jsonBody(\"coord.lon\", -0.13);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check Weather Main\", function () {\r",
+							"    //Check if 'Wheather exists or not' exists in the response\r",
+							"    pm.expect(pm.response.json()).to.have.property(\"weather\");\r",
+							"    pm.expect(pm.response.json().weather[0]).to.have.property(\"main\", \"Drizzle\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check Wind Speed\", function () {\r",
+							"    var responseJson = pm.response.json();\r",
+							"\r",
+							"    // Check if 'wind.speed' exists in the response\r",
+							"    pm.expect(responseJson).to.have.property(\"wind\");\r",
+							"    pm.expect(responseJson.wind).to.have.property(\"speed\");\r",
+							"\r",
+							"    // Check if the wind speed is greater than or equal to 10 m/s\r",
+							"    pm.expect(responseJson.wind.speed).to.be.at.least(10);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check if Coordinates Correspond to London\", function () {\r",
+							"    var responseJson = pm.response.json();\r",
+							"\r",
+							"    // Check if 'name' (city name) in the response is equal to 'London'\r",
+							"    pm.expect(responseJson.name).to.eql(\"London\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22. \n\n",
+					"protocol": "https",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "b6 907d289e10d714a6e88b30761fae22. \n\n"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Take Home Assignment",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22. \n\n",
+							"protocol": "https",
+							"host": [
+								"samples",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "London,uk"
+								},
+								{
+									"key": "appid",
+									"value": "b6 907d289e10d714a6e88b30761fae22. \n\n"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Take Home Assignment",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22. \n\n",
+							"protocol": "https",
+							"host": [
+								"samples",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "London,uk"
+								},
+								{
+									"key": "appid",
+									"value": "b6 907d289e10d714a6e88b30761fae22. \n\n"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.24.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Sep 2023 11:00:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e70c27085ed41de5321252b16c9582fe\""
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "b81d51ac-97bf-4f2b-bb58-51bde8359070"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.001518"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"coord\": {\n        \"lon\": -0.13,\n        \"lat\": 51.51\n    },\n    \"weather\": [\n        {\n            \"id\": 300,\n            \"main\": \"Drizzle\",\n            \"description\": \"light intensity drizzle\",\n            \"icon\": \"09d\"\n        }\n    ],\n    \"base\": \"stations\",\n    \"main\": {\n        \"temp\": 280.32,\n        \"pressure\": 1012,\n        \"humidity\": 81,\n        \"temp_min\": 279.15,\n        \"temp_max\": 281.15\n    },\n    \"visibility\": 10000,\n    \"wind\": {\n        \"speed\": 4.1,\n        \"deg\": 80\n    },\n    \"clouds\": {\n        \"all\": 90\n    },\n    \"dt\": 1485789600,\n    \"sys\": {\n        \"type\": 1,\n        \"id\": 5091,\n        \"message\": 0.0103,\n        \"country\": \"GB\",\n        \"sunrise\": 1485762037,\n        \"sunset\": 1485794875\n    },\n    \"id\": 2643743,\n    \"name\": \"London\",\n    \"cod\": 200\n}"
+				},
+				{
+					"name": "Take Home Assignment",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22. \n\n",
+							"protocol": "https",
+							"host": [
+								"samples",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "London,uk"
+								},
+								{
+									"key": "appid",
+									"value": "b6 907d289e10d714a6e88b30761fae22. \n\n"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.24.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Sep 2023 11:00:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e70c27085ed41de5321252b16c9582fe\""
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "b81d51ac-97bf-4f2b-bb58-51bde8359070"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.001518"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"coord\": {\n        \"lon\": -0.13,\n        \"lat\": 51.51\n    },\n    \"weather\": [\n        {\n            \"id\": 300,\n            \"main\": \"Drizzle\",\n            \"description\": \"light intensity drizzle\",\n            \"icon\": \"09d\"\n        }\n    ],\n    \"base\": \"stations\",\n    \"main\": {\n        \"temp\": 280.32,\n        \"pressure\": 1012,\n        \"humidity\": 81,\n        \"temp_min\": 279.15,\n        \"temp_max\": 281.15\n    },\n    \"visibility\": 10000,\n    \"wind\": {\n        \"speed\": 4.1,\n        \"deg\": 80\n    },\n    \"clouds\": {\n        \"all\": 90\n    },\n    \"dt\": 1485789600,\n    \"sys\": {\n        \"type\": 1,\n        \"id\": 5091,\n        \"message\": 0.0103,\n        \"country\": \"GB\",\n        \"sunrise\": 1485762037,\n        \"sunset\": 1485794875\n    },\n    \"id\": 2643743,\n    \"name\": \"London\",\n    \"cod\": 200\n}"
+				}
+			]
+		}
+	]
+}
